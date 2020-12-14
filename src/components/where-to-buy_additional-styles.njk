@@ -1,0 +1,82 @@
+
+    <!-- Custom CSS -->
+    <style>
+
+        .rc-stockist-search > span {
+            width: 100%;
+            max-width: 100% !important;
+            display: block;
+        }
+
+        .rc-stockist-list {
+            margin: 0;
+            padding: 0;
+            display: block;
+            width: 100%;
+            max-height: 768px;
+            overflow-y: scroll;
+        }
+
+        .rc-stockist-list__list-item {
+            padding: 30px 30px 30px 80px;
+            margin: 0 0 10px 0;
+            list-style-type: none;
+            box-sizing: border-box;
+            position: relative;
+            display: block;
+            width: 100%;
+            cursor: pointer;
+        }
+
+        .rc-stockist-list__list-item--active .rc-stockist-list__list-item__checkbox::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            background-color: #e2001a;
+            transform: translate(-50%, -50%);
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+        }
+
+        .rc-stockist-list__list-item__checkbox {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 30px;
+            height: 20px;
+            width: 20px;
+            border: 1px solid grey;
+            border-radius: 50%;
+        }
+
+        .rc-stockist-list__list-item__get-directions {
+            display: block;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        .rc-no-stack {
+            justify-content: space-between;
+        }
+
+        .rc-no-stack.rc-three-column .rc-column {
+            width: 30%;
+        }
+
+        .rc-no-stack.rc-three-column .rc-column.rc-double-width  {
+            width: 60%;
+        }
+
+        .rc-btn.rc-btn-bg--brand4 {
+            background-color: #f6f6f6;
+        }
+
+        @media only screen and (max-width: 769px) {
+            .rc-flex-column--sm {
+                flex-direction: column;
+            }
+        }
+    </style>
+    <!-- End of Custom CSS -->

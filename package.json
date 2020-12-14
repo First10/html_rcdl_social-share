@@ -1,0 +1,21 @@
+{
+  "name": "HTML_Royal-Canin_Where-To-Buy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "browser-sync": "^2.26.12",
+    "gulp-nunjucks": "^5.0.1",
+    "gulp-nunjucks-render": "^2.2.3"
+  },
+  "devDependencies": {
+    "del": "^5.1.0",
+    "gulp": "^4.0.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "gulp build"
+  },
+  "author": "Tom Walsh",
+  "license": "MIT"
+}

@@ -1,0 +1,8 @@
+# Node Modules folder.
+node_modules
+
+# Distributipon folder.
+dist
+
+# Misc
+.DS_Store

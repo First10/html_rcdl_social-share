@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>{% block title %}Starter Page / Boilerplate | Royal Canin Design Language{% endblock %}</title>
+    <meta name="robots" content="noindex">
+    <meta name="viewport"
+        content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height" />
+    <meta charset="utf-8" />
+    <meta name="robots" content="noindex" />
+    <link rel="icon" href="./favicon.ico" type="image/x-icon" />
+    <link rel="preconnect" href="https://d1a19ys8w1wkc1.cloudfront.net">
+    <link rel="dns-prefetch" href="https://d1a19ys8w1wkc1.cloudfront.net">
+    <meta name="description"
+        content="This is an example of a meta description. This will often show up in search results. Please fill this with relevant information">
+
+    <!-- Google Tag Manager -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({
+        'gtm.start': new Date().getTime(),
+        event: 'gtm.js'
+        });
+        var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s),
+        dl = l != 'dataLayer' ? '&l=' + l : '';
+        j.async = true;
+        j.src =
+        'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-NCWZQ3');
+    </script>
+    <!-- End Google Tag Manager -->
+
+    <link id="royal-canin" rel="stylesheet" type='text/css' href="https://d1a19ys8w1wkc1.cloudfront.net/royal-canin.styles.prefix.min.critical.css?v=8-9-8" />
+    <script type="text/javascript" src="https://d1a19ys8w1wkc1.cloudfront.net/royal-canin.min.bundle.js?v=8-9-8"></script>
+
+    {% include "src/components/where-to-buy_additional-styles.njk" %}
+
+</head>
+
+<body class="rc-bg-colour--brand4 rc-template">
+
+    <!-- main -->
+
+    {% block main %}
+    <main class="rc-content--fixed-header rc-main-content__wrapper ">
+        <section>
+            <div class="rc-layout-container rc-padding--sm rc-bg-colour--brand3 rc-margin-bottom--xs">
+                <div class="rc-column ">
+                    <div class="rc-layout-container rc-one-column rc-self-h-middle rc-max-width--lg">
+                        <div class="rc-column rc-margin-y--md rc-max-width--md">
+                            <div class="rc-margin-y--sm">
+                            <h1 class="rc-alpha">Main Block</h1>
+                            <p>Add the main block content to your page to remove this default.<br /></p>
+                            </div>
+                        </div>
+                        <div class="rc-column ">
+                            <img alt='Cat and Dog with a ball.' src='https://d1a19ys8w1wkc1.cloudfront.net/img-b-w.jpg?v=8-9-6' class='rc-full-width'>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    {% endblock %}
+
+    <!-- Language selector modal -->
+    {% include "src/components/where-to-buy_language-selector-modal.njk" %}
+    <!-- End language selector modal -->
+
+    {% include "src/components/where-to-buy_additional-javascript.njk" %}
+</body>
+
+</html>

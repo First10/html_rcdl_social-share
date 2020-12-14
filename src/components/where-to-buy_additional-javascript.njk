@@ -1,0 +1,94 @@
+<!-- Custom JavaScript. -->
+<script>
+    (function() {
+
+        var viewportWidth = window.innerWidth || document.documentElement.clientWidth;
+
+        var stockistListItems = document.querySelectorAll('.rc-stockist-list__list-item');
+
+        Array.from(stockistListItems).forEach(item => {
+            item.addEventListener('click', event => {
+                if ([...item.classList].includes('rc-stockist-list__list-item--active')) {
+                    return;
+                } else {
+                    Array.from(stockistListItems).forEach(item => {
+                        item.classList.remove('rc-stockist-list__list-item--active');
+                    });
+                    item.classList.add('rc-stockist-list__list-item--active');
+                }
+            });
+        })
+
+        var headerHambIcon = document.querySelectorAll('.rc-header__nav--new .rc-btn.rc-menu--xs');
+        var headerSecondaryNav = document.querySelectorAll('.rc-header__nav--new.rc-header__nav--secondary');
+
+        Array.from(headerHambIcon).forEach(item => {
+            item.addEventListener('click', event => {
+                if (headerSecondaryNav[0].classList.contains('rc-secondary-nav--open')) {
+                    headerSecondaryNav[0].classList.remove('rc-secondary-nav--open');
+                } else {
+                    headerSecondaryNav[0].classList.add('rc-secondary-nav--open');
+                }
+            });
+        });
+
+        var desktopSecondaryNavItems = document.querySelectorAll('.rc-header__nav--new.rc-header__nav--secondary > ul > li > a');
+        var rcShade = document.querySelectorAll('.rc-shade');
+
+        // This is the desktop nav functionality.
+        if (viewportWidth >= 960) {
+            Array.from(desktopSecondaryNavItems).forEach(item => {
+                item.addEventListener('click', event => {
+                    // This prevents the default click event from happening.
+                    event.preventDefault();
+                    // This checks whether the mega menu is already open.
+                    if (headerSecondaryNav[0].classList.contains('rc-mega-nav--open')) {
+                        // If the mega menu is already open, we remove the 'rc-mega-nav--open' class.
+                        headerSecondaryNav[0].classList.remove('rc-mega-nav--open');
+                        // If the mega menu is already open, we add the 'rc-hidden' class to the shade to hide it.
+                        rcShade[0].classList.add('rc-hidden');
+                    } else {
+                        // If the mega menu is not already open, we add the 'rc-mega-nav--open' class.
+                        headerSecondaryNav[0].classList.add('rc-mega-nav--open');
+                        // If the mega menu is not already open, we remove the 'rc-hidden' class to the shade to show it.
+                        rcShade[0].classList.remove('rc-hidden');
+                    }
+                });
+            });
+        }
+
+        // This is the mobile nav functionality.
+        if (viewportWidth < 960) {
+            // This adds each sub menu to an array.
+            var mobileSubMenu = document.querySelectorAll('.rc-list__item ul');
+            Array.from(mobileSubMenu).forEach(item => {
+                // For each sub menu, we add the outer height to a variable.
+                var itemHeight = item.offsetHeight + 'px';
+                // We the immediately set the height of the sub menu to 0 to hide it.
+                item.style.height = "0px";
+
+                // When the user clicks on the sub menu parent (ie. the li).
+                item.parentNode.addEventListener('click', event => {
+                    // This prevents the default click event from happening.
+                    event.preventDefault();
+                    // If the sub menu is already open.
+                    if (item.classList.contains('rc-submenu--open')) {
+                        // We set the sub menu height back to '0px' and remove the 'open' class.
+                        item.style.height = "0px";
+                        item.classList.remove('rc-submenu--open');
+                    } else {
+                        // If the sub menu is not already open.
+                        // We set the sub menu height back to the variable we saved earlier and add the 'open' class.
+                        item.style.height = itemHeight;
+                        item.classList.add('rc-submenu--open');
+                    }
+                });
+            });
+        }
+
+
+
+
+    })();
+</script>
+<!-- End Custom JavaScript. -->

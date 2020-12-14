@@ -1,0 +1,17 @@
+{% extends "./src/templates/where-to-buy_empty.template" %}
+{% block title %}Social Share Icons Page{% endblock %}
+{% block main %}
+
+    <main class="rc-content--fixed-header rc-main-content__wrapper ">
+
+        <!-- Breadcrumb. -->
+        {% include "src/components/where-to-buy_breadcrumb.njk" %}
+        <!-- End breadcrumb. -->
+
+        <!-- Social share block. -->
+        {% include "src/components/social-share.njk" %}
+        <!-- End social share block. -->
+
+    </main>
+
+{% endblock %}
